@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopCore.WebUI", "ShopCore.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopCore.Core", "ShopCore.Core\ShopCore.Core.csproj", "{9EEC1D61-4B93-4846-A05B-72311FA8E341}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopCore.Repository", "ShopCore.Repository\ShopCore.Repository.csproj", "{FF693893-4697-410C-9982-F644AB9435F1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{9EEC1D61-4B93-4846-A05B-72311FA8E341}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9EEC1D61-4B93-4846-A05B-72311FA8E341}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9EEC1D61-4B93-4846-A05B-72311FA8E341}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF693893-4697-410C-9982-F644AB9435F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF693893-4697-410C-9982-F644AB9435F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF693893-4697-410C-9982-F644AB9435F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF693893-4697-410C-9982-F644AB9435F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
