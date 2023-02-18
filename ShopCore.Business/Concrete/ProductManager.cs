@@ -1,4 +1,5 @@
 ﻿using ShopCore.Core.DataAccess.Abstract;
+using ShopCore.DataAccess.Abstract;
 using ShopCore.Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -11,39 +12,51 @@ namespace ShopCore.Business.Concrete
 {
     public class ProductManager : IProductService
     {
+        private IProductRepository _productRepository;
+
+        public ProductManager(IProductRepository productRepository)
+        {
+            _productRepository = productRepository;
+        }
+
         public Product Add(Product entity)
         {
-            throw new NotImplementedException();
+            return _productRepository.Add(entity);
         }
 
         public void Delete(Product entity)
         {
-            throw new NotImplementedException();
+             _productRepository.Delete(entity);
+
         }
 
         public Product Get(Expression<Func<Product, bool>> filter)
         {
-            throw new NotImplementedException();
+            return _productRepository.Get(filter);
+
         }
 
         public Product GetById(int id)
         {
-            throw new NotImplementedException();
+            return _productRepository.GetById(id);
+
         }
 
         public IEnumerable<Product> GetEnumerableAll(Expression<Func<Product, bool>> filter = null)
         {
-            throw new NotImplementedException();
+            return _productRepository.GetEnumerableAll(filter);
+
         }
 
         public IQueryable<Product> GetQueryableAll(Expression<Func<Product, bool>> filter = null)
         {
-            throw new NotImplementedException();
+            return _productRepository.GetQueryableAll(filter);
+
         }
 
         public Product Update(Product entity)
         {
-            throw new NotImplementedException();
+            return _productRepository.Update(entity);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using ShopCore.Business.Abstract;
+using ShopCore.DataAccess.Abstract;
 using ShopCore.Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -11,39 +12,40 @@ namespace ShopCore.Business.Concrete
 {
     public class CategoryManager : ICategoryService
     {
+        ICategoryRepository _categoryRepository;
         public Category Add(Category entity)
         {
-            throw new NotImplementedException();
+            return _categoryRepository.Add(entity);
         }
 
         public void Delete(Category entity)
         {
-            throw new NotImplementedException();
+             _categoryRepository.Delete(entity);
         }
 
         public Category Get(Expression<Func<Category, bool>> filter)
         {
-            throw new NotImplementedException();
+            return _categoryRepository.Get(filter);
         }
 
         public Category GetById(int id)
         {
-            throw new NotImplementedException();
+            return _categoryRepository.GetById(id);
         }
 
         public IEnumerable<Category> GetEnumerableAll(Expression<Func<Category, bool>> filter = null)
         {
-            throw new NotImplementedException();
+            return _categoryRepository.GetEnumerableAll(filter);
         }
 
         public IQueryable<Category> GetQueryableAll(Expression<Func<Category, bool>> filter = null)
         {
-            throw new NotImplementedException();
+            return _categoryRepository.GetQueryableAll(filter);
         }
 
         public Category Update(Category entity)
         {
-            throw new NotImplementedException();
+            return _categoryRepository.Update(entity);
         }
     }
 }

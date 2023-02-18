@@ -1,4 +1,5 @@
 ﻿using ShopCore.Business.Abstract;
+using ShopCore.DataAccess.Abstract;
 using ShopCore.Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -11,39 +12,48 @@ namespace ShopCore.Business.Concrete
 {
     public class OrderManager : IOrderService
     {
+        private IOrderRepository _orderRepository;
+
+        public OrderManager(IOrderRepository orderRepository)
+        {
+            _orderRepository = orderRepository;
+        }
+
         public Order Add(Order entity)
         {
-            throw new NotImplementedException();
+            return _orderRepository.Add(entity);
         }
 
         public void Delete(Order entity)
         {
-            throw new NotImplementedException();
+             _orderRepository.Delete(entity);
+
         }
 
         public Order Get(Expression<Func<Order, bool>> filter)
         {
-            throw new NotImplementedException();
+            return _orderRepository.Get(filter);
+
         }
 
         public Order GetById(int id)
         {
-            throw new NotImplementedException();
+            return _orderRepository.GetById(id);
         }
 
         public IEnumerable<Order> GetEnumerableAll(Expression<Func<Order, bool>> filter = null)
         {
-            throw new NotImplementedException();
+            return _orderRepository.GetEnumerableAll(filter);
         }
 
         public IQueryable<Order> GetQueryableAll(Expression<Func<Order, bool>> filter = null)
         {
-            throw new NotImplementedException();
+            return _orderRepository.GetQueryableAll(filter);
         }
 
         public Order Update(Order entity)
         {
-            throw new NotImplementedException();
+            return _orderRepository.Update(entity);
         }
     }
 }

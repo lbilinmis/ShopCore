@@ -1,7 +1,17 @@
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
+using ShopCore.Business.DependecyResolvers.Autofac;
+
 var builder = WebApplication.CreateBuilder(args);
+builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
+builder.Host.ConfigureContainer<ContainerBuilder>(builder => builder.RegisterModule(new AutofacBusinessModule()));
+
+
 
 // Add services to the container.
-builder.Services.AddRazorPages();
+
+builder.Services.AddControllers();
+builder.Services.AddMvc();
 
 var app = builder.Build();
 
@@ -16,7 +26,8 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
-app.UseRouting();
+//app.UseRouting();
+app.UseMvcWithDefaultRoute();
 
 app.UseAuthorization();
 
