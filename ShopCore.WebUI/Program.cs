@@ -1,6 +1,7 @@
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using ShopCore.Business.DependecyResolvers.Autofac;
+using ShopCore.DataAccess.Concrete.EntityFramework.Seeds;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
@@ -23,11 +24,12 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+SeedDatabase.Seed();
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
-//app.UseRouting();
-app.UseMvcWithDefaultRoute();
+app.UseRouting(); ;
 
 app.UseAuthorization();
 
