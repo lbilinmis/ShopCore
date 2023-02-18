@@ -6,9 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\ShopCore.Core\ShopCore.Core.csproj" />
-    <ProjectReference Include="..\ShopCore.Entities\ShopCore.Entities.csproj" />
-  </ItemGroup>
-
 </Project>
