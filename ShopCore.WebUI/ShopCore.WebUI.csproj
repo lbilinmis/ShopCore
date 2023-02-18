@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ShopCore.Business\ShopCore.Business.csproj" />
+    <ProjectReference Include="..\ShopCore.Entities\ShopCore.Entities.csproj" />
   </ItemGroup>
 
   <ItemGroup>

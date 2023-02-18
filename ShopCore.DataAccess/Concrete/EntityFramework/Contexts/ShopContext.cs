@@ -15,6 +15,11 @@ namespace ShopCore.DataAccess.Concrete.EntityFramework.Contexts
             optionsBuilder.UseSqlServer(@"Data source=IGU-NB-0884;initial catalog=ShoppingDB;user id=sa;password=s123456*-;");
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<ProductCategory>()
+                .HasKey(c => new {c.CategoryId,c.ProductId});
+        }
 
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
