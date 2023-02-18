@@ -12,11 +12,12 @@ namespace ShopCore.Core.DataAccess.Abstract
     {
         T GetById(int id);
         T Get(Expression<Func<T, bool>> filter);
-        IQueryable<T> GetAll(Expression<Func<T, bool>> filter = null);
+        IQueryable<T> GetQueryableAll(Expression<Func<T, bool>> filter = null);
+        IEnumerable<T> GetEnumerableAll(Expression<Func<T, bool>> filter = null);
 
         T Add(T entity);
         T Update(T entity);
-        T Delete(T entity);
+        void Delete(T entity);
 
     }
 }

@@ -1,5 +1,6 @@
 ﻿using ShopCore.Core.DataAccess.Concrete.EntityFramework;
 using ShopCore.DataAccess.Abstract;
+using ShopCore.DataAccess.Concrete.EntityFramework.Contexts;
 using ShopCore.Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ShopCore.DataAccess.Concrete.EntityFramework
 {
-    public class EfProductRepository : GenericRepositoryBase<Product>, IProductRepository
+    public class EfProductRepository : GenericRepositoryBase<Product,ShopContext>, IProductRepository
     {
     }
 }
